@@ -1,5 +1,6 @@
 import React from "react";
 import ViewSwitcher from "./ViewSwitcher.jsx"
+import initialTaskData from "../reducers/reducer.js"
 
 const TaskView = props => {
     let style = {
@@ -13,7 +14,7 @@ const TaskView = props => {
         <div>
         <ViewSwitcher />,
         <div style={style}>
-
+        {initialTaskData.todos}
         </div>
         </div>
     )

@@ -1,12 +1,12 @@
 import React from "react";
-import NewTask from "../components/NewTask.jsx";
 import TaskView from "../components/TaskView.jsx"
+import TaskContainer from "../containers/TaskContainer";
 
 
 const ToDo = () => {
     return (
         <div>
-            <NewTask />
+            <TaskContainer />
             <TaskView />
         </div>
     );

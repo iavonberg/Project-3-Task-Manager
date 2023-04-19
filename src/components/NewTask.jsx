@@ -11,10 +11,11 @@ const NewTask = props => {
         paddingRight: 150,
     }
 
+
     return (
         <div style={style}>
         <input style={inputStyle} type="text" placeholder="Add a new task" />
-        <NewTaskButton />
+        <NewTaskButton name="state.input.value" id="1" status="incomplete" />
         </div>
     )
 
