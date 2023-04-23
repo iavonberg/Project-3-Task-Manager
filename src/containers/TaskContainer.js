@@ -1,26 +1,23 @@
 import { connect } from "react-redux";
-import NewTaskButton from "../components/NewTaskButton";
-import NewTask from "../components/NewTask"
 import newTask from "../actions/newTask"
+import TaskView from "../components/TaskView"
+import NewTask from "../components/NewTask"
 
 const mapStateToProps = state => {
     return {
-        name: state.name,
-        taskId: state.taskId,
-        status: state.status,
+        task: state.taskData,
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        addTask: (name, id, status) => {
-            dispatch(newTask(name, id, status));
-        }}
-    };
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         addTask: (name, id, status) => {
+//             dispatch(newTask(name, id, status));
+//         }}
+//     };
 
-const TaskContainer = connect(mapStateToProps, mapDispatchToProps)(
-    NewTask,
-    NewTaskButton
+const TaskContainer = connect(mapStateToProps, null)(
+    TaskView,
 );
 
 export default TaskContainer;

@@ -4,7 +4,7 @@ const deleteTask = (id) =>
 {
     return {
         type: DELETE_TASK,
-        taskId: id,
+        id: id,
     };
 };
 

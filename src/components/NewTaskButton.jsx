@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { useDispatch } from 'react-redux';
-import newTask from "../actions/newTask";
-import { NEW_TASK } from "../reducers/reducer"
+import { useDispatch as dispatch } from 'react-redux';
+
 
 
 const NewTaskButton = props => {
-    const dispatch = useDispatch();
     let style = {
         marginLeft: 10,
     }
+    let userInput = document.getElementById('userInput').value;
 
     return (
-        <button style={style} onClick ={ () => dispatch(NEW_TASK(props.name)) }>Add Task</button>
+        <div>
+        <button style={style} onClick ={ () => dispatch({type: "NEW_TASK", id: 2, name: {userInput}}) }>Add Task</button>
+        </div>
     )
 }
 

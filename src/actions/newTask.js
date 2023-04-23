@@ -1,11 +1,13 @@
 import { NEW_TASK } from "../constants/constants.js";
 
-const newTask = (name, id, status) => {
+const newTask = (name, id, completed) => {
     return {
         type: NEW_TASK,
+        task: {
+        id: id,
         taskTitle: name,
-        taskId: id,
-        status: status
+        completed: completed
+        }
     };
 };
 

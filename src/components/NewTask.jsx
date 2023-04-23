@@ -1,5 +1,6 @@
-import React from "react";
-import NewTaskButton from "./NewTaskButton.jsx"
+import React, {useState} from "react";
+import { useDispatch } from 'react-redux';
+
 
 const NewTask = props => {
     var style = {
@@ -10,12 +11,14 @@ const NewTask = props => {
     var inputStyle = {
         paddingRight: 150,
     }
+    const dispatch = useDispatch();
+    const [taskName, setTaskName] = useState('');
 
 
     return (
         <div style={style}>
-        <input style={inputStyle} type="text" placeholder="Add a new task" />
-        <NewTaskButton name="state.input.value" id="1" status="incomplete" />
+        <input value={taskName} style={inputStyle} type="text" placeholder="Add a new task" onChange={e => setTaskName(e.target.value)} />
+        <button onClick ={ () => dispatch({type: "NEW_TASK", id: 2, name: taskName}) }>Add Task</button>
         </div>
     )
 

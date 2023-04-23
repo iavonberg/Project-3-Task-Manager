@@ -1,10 +1,10 @@
 import { COMPLETE_TASK } from "../constants/constants.js";
 
-const completeTask = (id, status) => {
+const completeTask = (id, completed) => {
     return {
         type: COMPLETE_TASK,
-        taskId: id,
-        status: status
+        id: id,
+        completed: completed
     };
 };
 

@@ -1,6 +1,8 @@
 import React from "react";
 import ViewSwitcher from "./ViewSwitcher.jsx"
-import initialTaskData from "../reducers/reducer.js"
+import NewTask from "./NewTask.jsx"
+import TaskCheck from "./TaskCheck.jsx"
+import DeleteTask from "./DeleteButton.jsx"
 
 const TaskView = props => {
     let style = {
@@ -12,12 +14,19 @@ const TaskView = props => {
     }
     return (
         <div>
+        <NewTask />
         <ViewSwitcher />,
         <div style={style}>
-        {initialTaskData.todos}
-        </div>
-        </div>
-    )
-};
+        {props.task.map((task) => {
+            return (
+                <div><TaskCheck id={task.id}/> 
+                {task.name} | {task.id}
+                <DeleteTask id={task.id} /> </div>
 
+            )
+        })}
+        </div>
+        </div>
+);
+    }
 export default TaskView;
