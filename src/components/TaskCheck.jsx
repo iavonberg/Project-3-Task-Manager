@@ -3,8 +3,9 @@ import { useDispatch } from 'react-redux';
 
 const TaskCheck = props => {
     const dispatch = useDispatch();
+
     return (
-        <input type="checkbox" onChange={() => dispatch({type: "COMPLETE_TASK", completed: false, id: props.id})}></input>
+        <input type="checkbox" checked={props.checked} onChange={() => dispatch({type: "COMPLETE_TASK", completed: false, id: props.id})}></input>
     )
 }
 

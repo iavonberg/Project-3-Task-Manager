@@ -1,7 +1,5 @@
 import { connect } from "react-redux";
-import newTask from "../actions/newTask"
 import TaskView from "../components/TaskView"
-import NewTask from "../components/NewTask"
 
 const mapStateToProps = state => {
     return {

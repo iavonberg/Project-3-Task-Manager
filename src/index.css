@@ -19,4 +19,17 @@ a {
 
 a:hover {
   color: green;
+  font-weight: 700;
+}
+
+#viewList {
+  display: flex;
+  list-style: none;
+  margin-left: 560px;
+  margin-bottom: 20px;
+}
+
+.view {
+  color: black;
+  cursor: pointer;
 }
